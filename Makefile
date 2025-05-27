@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/sourcecode/code/cjson-1.7.2/cJSON-1.7.2
+CMAKE_SOURCE_DIR = /src/yh-samples/cjson/cjson-v1.7.2/abfast
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/sourcecode/code/cjson-1.7.2/cJSON-1.7.2
+CMAKE_BINARY_DIR = /src/yh-samples/cjson/cjson-v1.7.2/abfast
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/sourcecode/code/cjson-1.7.2/cJSON-1.7.2/CMakeFiles /root/sourcecode/code/cjson-1.7.2/cJSON-1.7.2/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /src/yh-samples/cjson/cjson-v1.7.2/abfast/CMakeFiles /src/yh-samples/cjson/cjson-v1.7.2/abfast/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/sourcecode/code/cjson-1.7.2/cJSON-1.7.2/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /src/yh-samples/cjson/cjson-v1.7.2/abfast/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -194,17 +194,17 @@ check/fast:
 .PHONY : check/fast
 
 #=============================================================================
-# Target rules for targets named cjson_test
+# Target rules for targets named harness
 
 # Build rule for target.
-cjson_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cjson_test
-.PHONY : cjson_test
+harness: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 harness
+.PHONY : harness
 
 # fast build rule for target.
-cjson_test/fast:
-	$(MAKE) -f CMakeFiles/cjson_test.dir/build.make CMakeFiles/cjson_test.dir/build
-.PHONY : cjson_test/fast
+harness/fast:
+	$(MAKE) -f CMakeFiles/harness.dir/build.make CMakeFiles/harness.dir/build
+.PHONY : harness/fast
 
 #=============================================================================
 # Target rules for targets named cjson
@@ -246,32 +246,32 @@ cJSON.c.s:
 	$(MAKE) -f CMakeFiles/cjson.dir/build.make CMakeFiles/cjson.dir/cJSON.c.s
 .PHONY : cJSON.c.s
 
-cjson_test.o: cjson_test.c.o
+harness.o: harness.c.o
 
-.PHONY : cjson_test.o
+.PHONY : harness.o
 
 # target to build an object file
-cjson_test.c.o:
-	$(MAKE) -f CMakeFiles/cjson_test.dir/build.make CMakeFiles/cjson_test.dir/cjson_test.c.o
-.PHONY : cjson_test.c.o
+harness.c.o:
+	$(MAKE) -f CMakeFiles/harness.dir/build.make CMakeFiles/harness.dir/harness.c.o
+.PHONY : harness.c.o
 
-cjson_test.i: cjson_test.c.i
+harness.i: harness.c.i
 
-.PHONY : cjson_test.i
+.PHONY : harness.i
 
 # target to preprocess a source file
-cjson_test.c.i:
-	$(MAKE) -f CMakeFiles/cjson_test.dir/build.make CMakeFiles/cjson_test.dir/cjson_test.c.i
-.PHONY : cjson_test.c.i
+harness.c.i:
+	$(MAKE) -f CMakeFiles/harness.dir/build.make CMakeFiles/harness.dir/harness.c.i
+.PHONY : harness.c.i
 
-cjson_test.s: cjson_test.c.s
+harness.s: harness.c.s
 
-.PHONY : cjson_test.s
+.PHONY : harness.s
 
 # target to generate assembly for a file
-cjson_test.c.s:
-	$(MAKE) -f CMakeFiles/cjson_test.dir/build.make CMakeFiles/cjson_test.dir/cjson_test.c.s
-.PHONY : cjson_test.c.s
+harness.c.s:
+	$(MAKE) -f CMakeFiles/harness.dir/build.make CMakeFiles/harness.dir/harness.c.s
+.PHONY : harness.c.s
 
 # Help Target
 help:
@@ -285,7 +285,7 @@ help:
 	@echo "... test"
 	@echo "... uninstall"
 	@echo "... check"
-	@echo "... cjson_test"
+	@echo "... harness"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
@@ -293,9 +293,9 @@ help:
 	@echo "... cJSON.o"
 	@echo "... cJSON.i"
 	@echo "... cJSON.s"
-	@echo "... cjson_test.o"
-	@echo "... cjson_test.i"
-	@echo "... cjson_test.s"
+	@echo "... harness.o"
+	@echo "... harness.i"
+	@echo "... harness.s"
 .PHONY : help
 
 
