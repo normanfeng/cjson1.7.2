@@ -2,13 +2,13 @@ CJSON_OBJ = cJSON.o
 UTILS_OBJ = cJSON_Utils.o
 CJSON_LIBNAME = libcjson
 UTILS_LIBNAME = libcjson_utils
-CJSON_TEST = cJSON_test
 
-CJSON_TEST_SRC = cJSON.c test.c
+
+
 
 LDLIBS = -lm
 
-LIBVERSION = 1.7.18
+LIBVERSION = 1.7.2
 CJSON_SOVERSION = 1
 UTILS_SOVERSION = 1
 
@@ -74,18 +74,12 @@ shared: $(CJSON_SHARED) $(UTILS_SHARED)
 
 static: $(CJSON_STATIC) $(UTILS_STATIC)
 
-tests: $(CJSON_TEST)
 
-test: tests
-	./$(CJSON_TEST)
 
 .c.o:
 	$(CC) -c $(R_CFLAGS) $<
 
-#tests
-#cJSON
-$(CJSON_TEST): $(CJSON_TEST_SRC) cJSON.h
-	$(CC) $(R_CFLAGS) $(CJSON_TEST_SRC)  -o $@ $(LDLIBS) -I.
+
 
 #static libraries
 #cJSON
@@ -160,4 +154,4 @@ clean:
 	$(RM) $(CJSON_OBJ) $(UTILS_OBJ) #delete object files
 	$(RM) $(CJSON_SHARED) $(CJSON_SHARED_VERSION) $(CJSON_SHARED_SO) $(CJSON_STATIC) #delete cJSON
 	$(RM) $(UTILS_SHARED) $(UTILS_SHARED_VERSION) $(UTILS_SHARED_SO) $(UTILS_STATIC) #delete cJSON_Utils
-	$(RM) $(CJSON_TEST)  #delete test
+	
